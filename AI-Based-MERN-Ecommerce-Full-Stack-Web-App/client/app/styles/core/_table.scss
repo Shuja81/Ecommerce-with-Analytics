@@ -1,0 +1,43 @@
+.table-section {
+    .search {
+        margin: 18px 0;
+
+        .search-label {
+            width: 100%;
+        }
+    }
+
+    .react-bootstrap-table {
+        .table {
+            overflow-x: auto;
+            display: block;
+            margin: 24px 0;
+            color: $theme-text;
+            background: rgba($theme-white, 0.03);
+            border-radius: $border-radius-primary;
+            border: 1px solid rgba($theme-white, 0.08);
+            box-shadow: $box-shadow-custom;
+
+            td,
+            th {
+                white-space: nowrap;
+                text-overflow: unset;
+                overflow-wrap: break-word;
+                width: 100%;
+                padding: 14px 16px;
+            }
+
+            thead th {
+                color: $theme-muted;
+                text-transform: uppercase;
+                font-size: $font-size-small;
+                border-bottom: 1px solid rgba($theme-white, 0.08);
+            }
+
+            tbody tr {
+                background: rgba($theme-white, 0.03);
+                border-bottom: 1px solid rgba($theme-white, 0.06);
+            }
+        }
+    }
+}

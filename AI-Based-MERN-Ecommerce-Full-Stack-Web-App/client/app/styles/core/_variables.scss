@@ -1,0 +1,138 @@
+// sass variables
+
+// Theme colors - Modern Light Ecommerce Theme
+$theme-background: #ffffff;
+$theme-surface: #f8fafc;
+$theme-surface-soft: #f1f5f9;
+$theme-surface-muted: #e2e8f0;
+$theme-border: #e2e8f0;
+$theme-text: #1e293b;
+$theme-muted: #64748b;
+$theme-shadow: rgba(15, 23, 42, 0.08);
+$theme-primary: #3b82f6;
+$theme-primary-dark: #2563eb;
+$theme-accent: #06b6d4;
+$theme-success: #10b981;
+$theme-warning: #f59e0b;
+$theme-danger: #ef4444;
+$theme-white: #ffffff;
+$theme-black: #1e293b;
+$theme-green: $theme-success;
+$theme-gray: #64748b;
+$theme-dark-gray: #475569;
+$theme-light-white: #f8fafc;
+$theme-light-blue: #dbeafe;
+$theme-bright-red: #ef4444;
+$theme-yellow: $theme-warning;
+$theme-blue: $theme-primary;
+
+$primary-color: $theme-primary;
+$primary-bg: linear-gradient(135deg, $theme-primary 0%, $theme-accent 100%);
+
+$secondary-color: $theme-surface-muted;
+$secondary-bg: $theme-surface-soft;
+
+$danger-color: $theme-danger;
+$danger-bg: $theme-danger;
+$danger-hover-bg: #dc2626;
+
+$dark-bg: $theme-black;
+$dark-hover-bg: #334155;
+
+$default-color: $theme-muted;
+$default-bg: $theme-muted;
+
+// standard colors
+$blue: #20a8d8;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #ff5454;
+$white: #fff;
+$orange: #fabb3d;
+$yellow: #ffc107 !default;
+$green: #79c447;
+$gray: #808081;
+$teal: #20c997 !default;
+$cyan: #67c2ef;
+$black: #000;
+
+$font-family: 'Poppins';
+$font-family-heading: 'Poppins';
+$font-family-body: 'Poppins';
+$font-size-x-small: 12px;
+$font-size-small: 13px;
+$font-size-medium: 14px;
+$font-size-large: 15px;
+$font-size-x-large: 16px;
+$font-size-xx-large: 18px;
+$font-size-huge: 20px;
+$font-size-x-huge: 24px;
+$font-size-heading-xsmall: 14px;
+$font-size-heading-small: 16px;
+$font-size-heading-medium: 18px;
+$font-size-heading-large: 20px;
+$font-size-heading-x-large: 24px;
+$font-weight-thin: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// layout variables
+$btn-bg: $theme-surface-soft;
+$btn-bg-hover: $theme-primary;
+$font-color: $theme-text;
+$font-light-color: $theme-muted;
+$font-text: $theme-text;
+$font-muted: $theme-muted;
+$font-custom-color: $theme-text;
+$font-subtext-color: $theme-muted;
+$font-custom-hover-color: $theme-primary;
+$font-hover-color: $theme-primary-dark;
+$font-focus-color: $theme-primary-dark;
+$font-heading-color: $theme-black;
+$border-color-default: $theme-border;
+$border-color-primary: $theme-border;
+$border-hover-color: $theme-primary;
+$border-focus-color: $theme-primary;
+$separator-color: $theme-surface-muted;
+$dark-overflow-bg: rgba(0, 0, 0, 0.65);
+$transparent-bg: rgba(255, 255, 255, 0.05);
+$transparent-gray-bg: rgba(148, 163, 184, 0.08);
+$transparent-white-bg: rgba(255, 255, 255, 0.08);
+$hover-bg: rgba(91, 125, 255, 0.12);
+$badge: $theme-accent;
+$stars: #cbd5e1;
+$stars-active: #60a5fa;
+$disabled-bg: rgba(148, 163, 184, 0.12);
+
+$outline-color: rgba(91, 125, 255, 0.32);
+$validation-color: $danger-color;
+$outline-box-shadow: 0 0 0 3px rgba(91, 125, 255, 0.24);
+$box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
+$box-shadow-custom: 0 8px 24px rgba(15, 23, 42, 0.12);
+$box-shadow-primary: 0 1px 2px rgba(0, 0, 0, 0.33);
+$box-shadow-secondary: 0 0 2px rgba(0, 0, 0, 0.33);
+$border-radius-default: 14px;
+$border-radius-primary: 20px;
+$border-radius-circle: 999px;
+$line-height: 1.6;
+$letter-spacing: 0.4px;
+$border-default: 1px solid $border-color-default;
+$border-primary: 1px solid $border-color-primary;
+$layout-max-width: 1280px;
+$layout-transition-speed: 0.25s !default;
+$layout-transition-higher-speed: 0.45s !default;
+
+// icons
+$twitter: url('/images/social-icons/twitter.svg');
+$pinterest: url('/images/social-icons/pinterest.svg');
+$instagram: url('/images/social-icons/instagram.svg');
+$facebook: url('/images/social-icons/facebook.svg');
+
+$bars: url('/images/bars.png');
+$chevron-down: url('/images/chevron-down.svg');
+$close: url('/images/close.svg');
+$bag: url('/images/bag.svg');

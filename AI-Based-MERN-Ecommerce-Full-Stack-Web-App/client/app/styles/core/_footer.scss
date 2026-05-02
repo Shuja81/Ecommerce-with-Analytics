@@ -1,0 +1,110 @@
+// footer styles
+.footer {
+    flex-shrink: 0;
+    border-top: 1px solid rgba($theme-white, 0.08);
+    background: linear-gradient(
+        180deg,
+        rgba($theme-surface, 0.95),
+        $theme-background
+    );
+    color: $theme-muted;
+}
+
+.footer-content {
+    @include flex();
+    justify-content: space-between;
+    padding: 28px 0 20px;
+    margin: 0 auto;
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.footer-block {
+    width: 100%;
+    margin-right: 24px;
+    border-right: 1px solid rgba($theme-white, 0.08);
+    padding-top: 20px;
+
+    &:last-child {
+        margin-right: 0;
+        border-right: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+        text-align: center;
+        margin: 14px 0;
+        border-right: none;
+        border-bottom: 1px solid rgba($theme-white, 0.08);
+        padding: 18px 0;
+    }
+
+    .block-title {
+        padding-bottom: 12px;
+        color: $theme-white;
+        font-weight: $font-weight-semibold;
+    }
+
+    .footer-link {
+        padding-bottom: 6px;
+
+        a {
+            color: $theme-muted;
+            transition: color $layout-transition-speed ease;
+
+            &:hover {
+                color: $theme-white !important;
+                text-decoration: none !important;
+            }
+        }
+    }
+}
+
+.footer-social-item {
+    text-align: center;
+
+    span,
+    a {
+        display: inline-block;
+        vertical-align: top;
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+
+    li {
+        padding-bottom: 8px;
+        margin: 0 auto;
+        display: inline-block;
+        @include media-breakpoint-down(sm) {
+            margin: 0 6px;
+        }
+
+        a {
+            margin-left: 10px;
+            @include media-breakpoint-down(sm) {
+                display: block;
+                margin-left: 0;
+            }
+        }
+    }
+
+    .facebook-icon,
+    .instagram-icon,
+    .pinterest-icon,
+    .twitter-icon {
+        @include icon($facebook, 40px, 40px);
+        background-size: 100%;
+        border-radius: 12px;
+        opacity: 0.9;
+    }
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 16px 0;
+    color: $theme-muted;
+}

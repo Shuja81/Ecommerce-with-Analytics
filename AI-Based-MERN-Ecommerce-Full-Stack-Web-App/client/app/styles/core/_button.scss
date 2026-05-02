@@ -1,0 +1,360 @@
+// start input button styles
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+button[type='button'],
+button[type='submit'],
+button[type='reset'],
+button {
+    border: 1px solid $theme-border;
+    background: $theme-white;
+    color: $theme-text !important;
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-radius: $border-radius-primary;
+    transition: all $layout-transition-speed ease;
+    padding: 10px 16px;
+    min-height: 46px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+    &:hover {
+        background: $theme-surface-soft;
+        border-color: $theme-primary;
+        color: $theme-primary !important;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 16px rgba($theme-primary, 0.12);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($theme-primary, 0.1);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    &:disabled {
+        background-color: $theme-surface-muted;
+        border-color: $theme-border !important;
+        pointer-events: none;
+        color: $theme-muted !important;
+    }
+}
+// end input button styles
+
+// basic styles
+.input-btn {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    min-height: 44px;
+    border-radius: $border-radius-primary;
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.02em;
+
+    .btn-text {
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-small;
+    }
+}
+
+// size
+.input-btn {
+    &.icon-only {
+        padding: 0 !important;
+        min-width: auto !important;
+
+        &.sm {
+            width: 34px;
+            height: 34px;
+        }
+
+        &.md {
+            width: 40px;
+            height: 40px;
+        }
+
+        &.lg {
+            width: 52px;
+            height: 52px;
+        }
+    }
+
+    &.sm {
+        padding: 8px 14px;
+        min-width: 100px;
+
+        .btn-text {
+            font-size: $font-size-x-small;
+        }
+    }
+
+    &.md {
+        padding: 12px 18px;
+        min-width: 140px;
+    }
+}
+
+// primary button
+.input-btn {
+    &.custom-btn-primary {
+        border: none;
+        background-image: linear-gradient(
+            135deg,
+            $theme-primary 0%,
+            $theme-accent 100%
+        );
+        color: $white !important;
+        box-shadow: 0 18px 45px rgba(91, 125, 255, 0.18);
+
+        .btn-text {
+            color: $white !important;
+        }
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 20px 50px rgba(91, 125, 255, 0.22);
+        }
+    }
+}
+
+// secondary button
+.input-btn {
+    &.custom-btn-secondary {
+        border: 1px solid rgba($theme-white, 0.12);
+        background-color: rgba($theme-white, 0.05);
+        color: $theme-text;
+
+        .btn-text {
+            color: $theme-text;
+        }
+
+        &:hover {
+            background-color: rgba($theme-white, 0.1);
+        }
+    }
+}
+
+body.user-is-tabbing button:focus {
+    box-shadow: none;
+    outline: 1px dotted;
+}
+
+// danger button
+.input-btn {
+    &.custom-btn-danger {
+        position: relative;
+        border: none;
+        background-color: rgba($danger-color, 0.16);
+        color: $danger-color !important;
+        transition: all $layout-transition-speed ease;
+
+        .btn-text {
+            color: $danger-color !important;
+        }
+
+        &:hover {
+            background-color: rgba($danger-color, 0.24);
+        }
+    }
+}
+
+// none button
+.input-btn {
+    &.custom-btn-none {
+        position: relative;
+        min-width: auto;
+        border: 1px solid rgba($theme-white, 0.08);
+
+        &:hover {
+            color: $theme-text !important;
+            background-color: rgba($theme-white, 0.08);
+        }
+    }
+}
+
+// link button
+.input-btn {
+    &.custom-btn-link {
+        position: relative;
+        background-color: transparent;
+        color: $theme-primary;
+
+        .btn-text {
+            font-weight: $font-weight-medium;
+        }
+
+        &:hover {
+            color: $theme-accent;
+            background-color: rgba($theme-accent, 0.08);
+        }
+    }
+}
+
+// dark button
+.input-btn {
+    &.custom-btn-dark {
+        position: relative;
+        border: none;
+        background-color: rgba($theme-surface-muted, 0.9);
+        color: $white !important;
+
+        .btn-text {
+            color: $white !important;
+        }
+
+        &:hover {
+            background-color: $theme-surface;
+        }
+    }
+}
+
+// button link
+.btn-link {
+    padding: 10px;
+    border: $border-default;
+    display: inline-block;
+    min-width: 150px;
+    font-weight: $font-weight-normal;
+    color: $font-custom-color !important;
+    background-color: $btn-bg;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+
+    &:hover {
+        color: $white !important;
+        background-color: $btn-bg-hover;
+        -webkit-transition: $layout-transition-speed;
+        transition: $layout-transition-speed;
+    }
+}
+
+// button icon styles
+.input-btn {
+    .btn-icon {
+        display: inline-flex;
+        vertical-align: bottom;
+        line-height: 100%;
+    }
+
+    // text only styles
+    &.text-only {
+        .btn-text {
+            letter-spacing: 0.9px;
+        }
+    }
+
+    &.custom-btn-primary {
+        &.with-icon {
+            &:hover {
+                border-color: transparent;
+                -webkit-transition: $layout-transition-speed;
+                transition: $layout-transition-speed;
+
+                svg {
+                    fill: $white;
+                    stroke: $white !important;
+                    -webkit-transition: $layout-transition-speed;
+                    transition: $layout-transition-speed;
+                }
+            }
+        }
+    }
+
+    &.custom-btn-danger {
+        &.with-icon {
+            &:hover {
+                border-color: transparent;
+                -webkit-transition: $layout-transition-speed;
+                transition: $layout-transition-speed;
+
+                svg {
+                    fill: $white;
+                    stroke: $white !important;
+                    -webkit-transition: $layout-transition-speed;
+                    transition: $layout-transition-speed;
+                }
+            }
+        }
+    }
+
+    // with icon styles
+    &.with-icon {
+        &.icon-left {
+            .btn-icon {
+                margin-right: 6px;
+            }
+            .btn-text {
+                margin-right: 5px;
+            }
+        }
+        &.icon-right {
+            .btn-icon {
+                margin-left: 6px;
+            }
+            .btn-text {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+// bag button
+.input-btn {
+    &.bag-btn {
+        box-shadow: $box-shadow-custom;
+        min-width: 185px;
+        @include media-breakpoint-down(sm) {
+            width: 100% !important;
+        }
+
+        &:focus {
+            &.with-icon {
+                background-color: $primary-bg;
+                border-color: transparent;
+                -webkit-transition: $layout-transition-speed;
+                transition: $layout-transition-speed;
+
+                .btn-text {
+                    color: $white;
+                    -webkit-transition: $layout-transition-speed;
+                    transition: $layout-transition-speed;
+                }
+
+                svg {
+                    fill: $white;
+                    stroke: $white !important;
+                    -webkit-transition: $layout-transition-speed;
+                    transition: $layout-transition-speed;
+                }
+            }
+        }
+    }
+}
+
+.bag-icon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    stroke-width: 20px;
+    stroke: $black;
+    -webkit-transition: $layout-transition-speed;
+    transition: $layout-transition-speed;
+}
+
+.close-icon {
+    cursor: pointer;
+    position: relative;
+    background-size: 16px;
+    @include icon($close, 25px, 25px);
+
+    &:hover {
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,242 @@
+// header styles
+.header-info {
+    padding: 12px 0;
+    background: $theme-surface-soft;
+    border-bottom: 1px solid $theme-border;
+
+    .fa,
+    span {
+        color: $theme-muted;
+        font-size: $font-size-medium !important;
+        font-weight: $font-weight-medium;
+        margin: 0 6px;
+    }
+}
+
+.header {
+    background: $theme-white;
+    border-bottom: 1px solid $theme-border;
+    position: relative;
+    z-index: 50;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+    .logo {
+        font-size: 1.75rem !important;
+        font-weight: $font-weight-bold;
+        letter-spacing: 0.08em;
+        color: $theme-black !important;
+        text-transform: uppercase;
+    }
+}
+
+.fixed-mobile-header {
+    @include media-breakpoint-down(sm) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 998;
+    }
+}
+
+.top-header {
+    padding: 22px 0;
+
+    @include media-breakpoint-up(lg) {
+        padding: 28px 0;
+    }
+
+    .bars-icon,
+    .cart-icon {
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+
+    .fa {
+        cursor: pointer;
+        color: $theme-text;
+        font-size: $font-size-x-huge !important;
+    }
+
+    .col-no-padding {
+        @include media-breakpoint-down(sm) {
+            padding: 0 15px;
+        }
+    }
+
+    .navbar {
+        background-color: transparent !important;
+        justify-content: flex-end;
+        padding: 0;
+
+        @include media-breakpoint-down(sm) {
+            justify-content: center;
+        }
+
+        .cart-icon {
+            .bag-icon {
+                vertical-align: text-bottom;
+            }
+        }
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        @include media-breakpoint-up(md) {
+            margin-left: 20px;
+        }
+
+        .nav-link {
+            padding: 0 10px;
+            color: $theme-text !important;
+            font-weight: $font-weight-medium;
+            text-transform: capitalize;
+
+            &.active {
+                color: $theme-primary !important;
+            }
+
+            &:hover {
+                color: $theme-primary !important;
+            }
+        }
+
+        .dropdown-toggle.nav-link {
+            text-transform: capitalize;
+        }
+
+        .dropdown-menu {
+            &.nav-brand-dropdown {
+                padding: 0;
+                @include media-breakpoint-down(sm) {
+                    left: -30px;
+                    min-width: 270px;
+                }
+            }
+        }
+
+        .nav-item {
+            position: relative;
+            @include media-breakpoint-down(sm) {
+                margin-right: 12px;
+            }
+        }
+    }
+
+    .brand {
+        @include flex();
+        flex-wrap: wrap;
+        align-items: center;
+        @include media-breakpoint-down(sm) {
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .logo {
+            margin: 0;
+            color: $theme-white !important;
+            @include media-breakpoint-up(md) {
+                margin-left: 15px;
+            }
+        }
+    }
+
+    .cart-badge {
+        border-radius: 100%;
+        font-size: 0.65rem;
+        font-weight: 700;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        text-align: center;
+        width: 22px;
+        height: 22px;
+        background-color: $theme-accent;
+        color: $theme-surface;
+        @include flex();
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-links {
+        @include flex();
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+// mini brand
+.mini-brand {
+    min-width: 270px;
+    @include media-breakpoint-up(md) {
+        min-width: 500px;
+    }
+
+    .min-brand-title {
+        border-bottom: 1px solid rgba($theme-white, 0.08);
+        padding-bottom: 10px;
+        margin-bottom: 18px;
+    }
+}
+
+.mini-brand-list {
+    padding: 16px 20px;
+    @include media-breakpoint-up(md) {
+        padding: 20px 40px;
+    }
+
+    .mini-brand-block {
+        @include flex();
+        flex-wrap: wrap;
+        margin-top: 12px;
+
+        .brand-item {
+            flex: 100%;
+            margin-bottom: 10px;
+
+            @include media-breakpoint-up(md) {
+                flex: 50%;
+            }
+
+            .brand-link {
+                position: relative;
+                color: $font-custom-color !important;
+                font-size: $font-size-large;
+                font-weight: $font-weight-normal;
+
+                &:hover {
+                    &:after {
+                        opacity: 1;
+                        -webkit-transform: translateY(2px);
+                        -moz-transform: translateY(2px);
+                        transform: translateY(2px);
+                    }
+                }
+
+                &:after {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $primary-bg;
+                    content: '';
+                    opacity: 0;
+                    -webkit-transition:
+                        opacity $layout-transition-speed,
+                        -webkit-transform $layout-transition-speed;
+                    -moz-transition:
+                        opacity $layout-transition-speed,
+                        -moz-transform $layout-transition-speed;
+                    transition:
+                        opacity $layout-transition-speed,
+                        transform $layout-transition-speed;
+                    -webkit-transform: translateY(10px);
+                    -moz-transform: translateY(10px);
+                    transform: translateY(10px);
+                }
+            }
+        }
+    }
+}

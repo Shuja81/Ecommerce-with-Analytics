@@ -1,0 +1,128 @@
+// start input text styles
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba($theme-white, 0.1);
+    font-size: $font-size-medium;
+    color: $theme-text;
+    background: rgba($theme-white, 0.05);
+    border-radius: $border-radius-primary;
+    transition: all $layout-transition-speed ease;
+    cursor: text;
+    @include appearance();
+
+    &:focus {
+        outline: none;
+        color: $font-text;
+        border-color: rgba($theme-primary, 0.35) !important;
+        background: rgba($theme-white, 0.08);
+        box-shadow: 0 0 0 4px rgba($theme-primary, 0.12);
+    }
+
+    &:disabled {
+        background-color: rgba($theme-white, 0.04);
+        border: 1px solid rgba($theme-white, 0.08) !important;
+        cursor: not-allowed;
+        color: $theme-muted;
+    }
+}
+
+body.user-is-tabbing textarea {
+    box-shadow: none !important;
+}
+// end input text styles
+
+.input-box,
+.select-box {
+    .invalid-message {
+        visibility: hidden;
+        opacity: 0;
+        color: $validation-color;
+        height: 0;
+        @include flex();
+        transition: $layout-transition-speed;
+    }
+
+    &.invalid {
+        .input-text,
+        textarea {
+            border-color: $validation-color;
+            transition: $layout-transition-speed;
+
+            &:focus {
+                border-color: $validation-color !important;
+            }
+        }
+
+        .invalid-message {
+            visibility: visible;
+            opacity: 1;
+            height: 100%;
+            margin-top: 6px;
+            transition: $layout-transition-speed;
+        }
+    }
+}
+
+.input-box {
+    margin: 14px 0;
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="file"] {
+        height: 52px;
+    }
+
+    label {
+        margin-bottom: 8px;
+        color: $theme-muted;
+        font-size: $font-size-medium;
+        font-weight: $font-weight-medium;
+    }
+}
+
+.inline-btn-box {
+    .input-text-block {
+        @include flex();
+        flex-direction: row;
+    }
+
+    .input-text {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .input-btn {
+        border-left: none !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+}
+
+.select-box {
+    margin: 14px 0;
+
+    label {
+        margin-bottom: 8px;
+        color: $theme-muted;
+        font-size: $font-size-medium;
+    }
+
+    .select-container {
+        .select-option__multi-value__label {
+            font-weight: $font-weight-normal;
+            font-size: $font-size-small;
+        }
+    }
+}
+
+@include placeholder {
+    font-size: $font-size-small;
+    line-height: $line-height;
+    text-transform: none;
+}

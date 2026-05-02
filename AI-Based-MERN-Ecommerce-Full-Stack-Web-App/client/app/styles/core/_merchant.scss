@@ -1,0 +1,49 @@
+.sell {
+  .agreement-banner-text {
+    background-color: $theme-white;
+    padding: 30px 16px 30px;
+    border-radius: $border-radius-primary;
+  }
+
+  .agreement-banner {
+    margin: 0 auto;
+    width: 250px;
+
+    @include media-breakpoint-up(md) {
+      width: 300px;
+    }
+  }
+}
+
+.merchant-dashboard {
+  .merchant-box {
+    border-radius: $border-radius-default;
+    box-shadow: $box-shadow-secondary;
+  }
+
+  .merchant-status-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+  }
+
+  .merchant-status-badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    line-height: 1;
+  }
+
+  .merchant-status-badge--active {
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+  }
+
+  .merchant-status-badge--disabled {
+    background: rgba(239, 68, 68, 0.12);
+    color: #dc2626;
+  }
+}
