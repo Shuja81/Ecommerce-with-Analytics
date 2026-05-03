@@ -4,6 +4,13 @@
  */
 
 const analyticsService = require("../services/analyticsService");
+let pythonAnalyticsService;
+try {
+    pythonAnalyticsService = require("../services/pythonAnalyticsService");
+} catch (err) {
+    // optional; python bridge may not be available in all environments
+    pythonAnalyticsService = null;
+}
 const { ROLES } = require("../constants");
 
 const resolveScopedQuery = (req) => {
@@ -20,7 +27,10 @@ const resolveScopedQuery = (req) => {
  */
 exports.getSalesAnalytics = async (req, res) => {
     try {
-        const result = await analyticsService.getSalesAnalysis(resolveScopedQuery(req));
+        const usePython = req.query.source === 'python' || process.env.USE_PYTHON_ANALYTICS === 'true';
+        const result = usePython && pythonAnalyticsService
+            ? await pythonAnalyticsService.getSalesAnalysis(resolveScopedQuery(req))
+            : await analyticsService.getSalesAnalysis(resolveScopedQuery(req));
         res.status(200).json(result);
     } catch (error) {
         console.error("Sales analytics error:", error);
@@ -38,9 +48,10 @@ exports.getSalesAnalytics = async (req, res) => {
  */
 exports.getUserBehaviorAnalytics = async (req, res) => {
     try {
-        const result = await analyticsService.getUserBehaviorAnalysis(
-            resolveScopedQuery(req),
-        );
+        const usePython = req.query.source === 'python' || process.env.USE_PYTHON_ANALYTICS === 'true';
+        const result = usePython && pythonAnalyticsService
+            ? await pythonAnalyticsService.getUserBehaviorAnalysis(resolveScopedQuery(req))
+            : await analyticsService.getUserBehaviorAnalysis(resolveScopedQuery(req));
         res.status(200).json(result);
     } catch (error) {
         console.error("User behavior analytics error:", error);
@@ -60,7 +71,10 @@ exports.getRecommendations = async (req, res) => {
     try {
         const scopedQuery = resolveScopedQuery(req);
         const { userId } = scopedQuery;
-        const result = await analyticsService.getRecommendations(userId, scopedQuery);
+        const usePython = req.query.source === 'python' || process.env.USE_PYTHON_ANALYTICS === 'true';
+        const result = usePython && pythonAnalyticsService
+            ? await pythonAnalyticsService.getRecommendations(userId, scopedQuery)
+            : await analyticsService.getRecommendations(userId, scopedQuery);
         res.status(200).json(result);
     } catch (error) {
         console.error("Recommendations error:", error);
@@ -78,7 +92,10 @@ exports.getRecommendations = async (req, res) => {
  */
 exports.getAnomalies = async (req, res) => {
     try {
-        const result = await analyticsService.getAnomalyDetection(resolveScopedQuery(req));
+        const usePython = req.query.source === 'python' || process.env.USE_PYTHON_ANALYTICS === 'true';
+        const result = usePython && pythonAnalyticsService
+            ? await pythonAnalyticsService.getAnomalyDetection(resolveScopedQuery(req))
+            : await analyticsService.getAnomalyDetection(resolveScopedQuery(req));
         res.status(200).json(result);
     } catch (error) {
         console.error("Anomaly detection error:", error);
