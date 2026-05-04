@@ -145,13 +145,7 @@ git clone https://github.com/your-repo/mern-ecommerce.git
 cd mern-ecommerce
 ```
 
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Setup Environment Variables
+### 2. Setup Environment Variables
 
 Create `.env` files for both client and server.
 
@@ -169,31 +163,57 @@ BASE_API_URL=api/v1
 REACT_APP_API_URL=http://localhost:5000
 ```
 
-### 4. Run Project (Development Mode)
+### 3. Run Project with Docker Compose
+
+Build and run the entire application (frontend, backend, and database) using Docker Compose:
 
 ```bash
-npm run dev
+docker-compose up --build
 ```
 
-This starts:
+This command will:
+- Build Docker images for client and server
+- Start MongoDB container
+- Start Express backend server
+- Start React frontend development server
+- Set up all necessary networks and volumes
 
-- React frontend
-- Express backend
+To stop the containers:
+
+```bash
+docker-compose down
+```
+
+To view logs:
+
+```bash
+docker-compose logs -f
+```
 
 ---
 
 ## Python Analytics Setup
 
-### Install Dependencies
+The Python analytics environment is included in the Docker setup. When you run `docker-compose up --build`, it automatically sets up the analytics dependencies.
+
+To run analytics manually (if needed):
+
+```bash
+# Access the backend container
+docker-compose exec server sh
+
+# Then run analytics scripts
+python analytics/sales_analysis.py
+python analytics/user_behavior.py
+python analytics/recommendation.py
+python analytics/anomaly_detection.py
+```
+
+Or run directly from host (requires Python and dependencies):
 
 ```bash
 cd analytics
 pip install -r requirements.txt
-```
-
-### Run Analytics Manually
-
-```bash
 python sales_analysis.py
 python user_behavior.py
 python recommendation.py
@@ -223,4 +243,10 @@ python anomaly_detection.py
 
 ---
 
-> **Note:** This project is not deployed and is intended for local development and academic evaluation. It focuses on system design, database architecture, role-based access control, and analytics integration.
+## Contributors
+
+- Shuja Naveed	502379	Backend (Auth, Users, Security) + Analytics APIs (user stats, login tracking)
+- Syed Abbas Raza Zaidi	517626	Product System (Products, Cart, Orders) + Sales Analytics APIs
+- Muhammad saif jamal	509165	Frontend (UI), Admin & Merchant Dashboard, Basic Analytics Display
+- Muhammad-Sufyan Abdullah	513762	Testing & QA, Monitoring & Logging, Documentation
+

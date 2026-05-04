@@ -1,7 +1,7 @@
 import { ROLES, EMAIL_PROVIDER } from '../constants';
 
 export const isProviderAllowed = provider =>
-  provider === EMAIL_PROVIDER.Google || provider === EMAIL_PROVIDER.Facebook;
+  false; // External authentication providers disabled
 
 export const isDisabledMerchantAccount = user =>
   user.role === ROLES.Merchant &&

@@ -28,8 +28,6 @@ exports.REVIEW_STATUS = {
 
 exports.EMAIL_PROVIDER = {
     Email: "Email",
-    Google: "Google",
-    Facebook: "Facebook",
 };
 
 exports.JWT_COOKIE = "x-jwt-cookie";
